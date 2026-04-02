@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --font-display: "Chakra Petch", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+}
+
+body {
+  @apply bg-[#050806] text-white;
+  font-family: var(--font-body);
+}
+
+.app-shell {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(0, 255, 136, 0.12), transparent 45%),
+    radial-gradient(circle at 85% 10%, rgba(0, 255, 200, 0.08), transparent 40%),
+    linear-gradient(160deg, rgba(5, 8, 6, 0.95), rgba(4, 12, 8, 0.95));
+  position: relative;
+  overflow: hidden;
+}
+
+.app-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(0, 255, 136, 0.18) 0.6px, transparent 0.6px);
+  background-size: 18px 18px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.glass-panel {
+  @apply rounded-2xl border border-emerald-400/30 bg-[#101a13]/90 shadow-[0_25px_70px_rgba(0,0,0,0.45)];
+}
+
+.neon-ring {
+  @apply inline-flex h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_18px_rgba(0,255,136,0.8)];
+}
+
+.neon-button {
+  @apply rounded-full bg-emerald-400 px-5 py-2 text-sm font-semibold text-emerald-950 shadow-[0_0_20px_rgba(0,255,136,0.35)] transition hover:-translate-y-0.5;
+}
+
+.ghost-button {
+  @apply rounded-full border border-emerald-400/60 px-5 py-2 text-sm font-semibold text-emerald-300 transition hover:bg-emerald-400/10;
+}
+
+.badge {
+  @apply rounded-full bg-emerald-400/15 px-3 py-1 text-[0.65rem] uppercase tracking-[0.2em] text-emerald-300;
+}
+
+.skeleton {
+  @apply animate-pulse rounded-lg bg-emerald-400/10;
+}
